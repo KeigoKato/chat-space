@@ -1,0 +1,55 @@
+.wrapper
+  .wrapper__left
+    .wrapper__left__user
+      %p.wrapper__left__user__name
+        keigo
+      %ul.wrapper__left__user__icon
+        %li
+          %a{href: "#"}
+            %i.fa.fa-pencil-square-o.fa-lg
+        %li
+          %a{href: "#"}
+            %i.fa.fa-cog.fa-lg
+
+    .wrapper__left__groups
+      - for i in 1..3
+        .wrapper__left__groups__group
+          %p.wrapper__left__groups__group__name
+            test_group#{i}
+          %p.wrapper__left__groups__group__comment
+            test_comment#{i}
+
+  .wrapper__right
+    .wrapper__right__header
+      .wrapper__right__header__group
+        %p test_Group
+        %ul
+          - for i in 0..3
+            %li
+              - if i==0
+                Members :
+              -else
+                name#{i}
+      .wrapper__right__header__editButton
+        Edit
+
+    .wrapper__right__messages
+      -for i in 1..3
+        .wrapper__right__messages__message
+          %ul.wrapper__right__messages__message__upper
+            %li.wrapper__right__messages__message__upper__name
+              keigo#{i}
+            %li.wrapper__right__messages__message__upper__date
+              2018/01/03 10:04:18
+          %p.wrapper__right__messages__message__lower
+            test_comment#{i}
+
+    .wrapper__right__footer.clearfix
+      %ul.wrapper__right__footer__left
+        %li.wrapper__right__footer__left__text
+          %input{type: "text", placeholder: "type a message"}
+        %li.wrapper__right__footer__left__image
+          %a{href: "#"}
+            %i.fa.fa-image.fa-lg
+      .wrapper__right__footer__right
+        Send
