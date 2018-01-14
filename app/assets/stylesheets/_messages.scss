@@ -107,6 +107,7 @@
       }
     }
     &__footer {
+      @extend .clearfix;
       background-color: #dddddd;
       padding: 20px 40px 20px 50px;
       &__left {
@@ -146,8 +147,3 @@
   }
 }
 
-.clearfix:after{
-  display: block;
-  content: '';
-  clear: both;
-}
