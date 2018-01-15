@@ -1,0 +1,149 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  &__left {
+    float: left;
+    height: 100vh;
+    width: 300px;
+    color: white;
+    &__user {
+      height: 120px;
+      background-color: #253141;
+      padding: 0 20px;
+      &__name {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        padding-top: 35px;
+      }
+      &__icon {
+        float: right;
+        padding-top: 35px;
+        li {
+          float: left;
+          margin-left: 10px;
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+    &__groups {
+      height: calc(100vh - 120px - 20px);
+      background-color: #2f3e51;
+      padding: 20px 20px 0 20px;
+      &__group {
+        &__name {
+          font-size: 15px;
+        }
+        &__comment {
+          font-size: 11px;
+          padding: 5px 0 40px 0;
+        }
+      }
+    }
+  }
+  &__right {
+    float: left;
+    height: 100vh;
+    width: calc(100vw - 300px);
+    &__header {
+      height: 120px;
+      background-color: white;
+      &__group {
+        float: left;
+        padding-top: 35px;
+        padding-left: 40px;
+        p {
+          font-size: 20px;
+        }
+        ul {
+          color: $light-gray;
+          padding-top: 15px;
+          li {
+            font-size: 12px;
+            float: left;
+            padding-right: 10px;
+          }
+        }
+      }
+      &__editButton {
+        float: right;
+        color: $skyblue-button;
+        border: 1px solid $skyblue-button;
+        margin: 28px 40px 0 0;
+        padding: 0 20px;
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+    &__messages {
+      height: calc(100vh - 120px - 46px - 90px);
+      background-color: #fafafa;
+      padding: 46px 40px 0 40px;
+      &__message {
+        padding-bottom: 40px;
+        &__upper {
+          &__name {
+            float: left;
+            font-size: 16px;
+            font-weight: bold;
+            color: $deep-blue;
+          }
+          &__date {
+            float: left;
+            font-size: 12px;
+            color: $light-gray;
+            padding-left: 10px;
+          }
+        }
+        &__lower {
+          clear: both;
+          font-size: 14px;
+          color: $deep-blue;
+          padding-top: 10px;
+        }
+      }
+    }
+    &__footer {
+      @extend .clearfix;
+      background-color: #dddddd;
+      padding: 20px 40px 20px 50px;
+      &__left {
+        float: left;
+        padding-left: 10px;
+        &__text {
+          float: left;
+          background-color: white;
+          input {
+            border: none;
+            padding: 0 10px;
+            line-height: 50px;
+            width: calc(100vw - 580px);
+          }
+        }
+        &__image {
+          float: left;
+          padding-right: 10px;
+          height: 50px;
+          line-height: 50px;
+          background-color: white;
+          a {
+            color: black;
+          }
+        }
+      }
+      &__right {
+        float: right;
+        font-size: 16px;
+        color: white;
+        padding:0 30px;
+        line-height: 50px;
+        margin-left: 15px;
+        background-color: $skyblue-button;
+      }
+    }
+  }
+}
+
