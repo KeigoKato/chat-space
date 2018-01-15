@@ -1,23 +1,6 @@
 .wrapper
-  .wrapper__left
-    .wrapper__left__user
-      %p.wrapper__left__user__name
-        keigo
-      %ul.wrapper__left__user__icon
-        %li
-          %a{href: "#"}
-            %i.fa.fa-pencil-square-o.fa-lg
-        %li
-          %a{href: "#"}
-            %i.fa.fa-cog.fa-lg
 
-    .wrapper__left__groups
-      - for i in 1..3
-        .wrapper__left__groups__group
-          %p.wrapper__left__groups__group__name
-            test_group#{i}
-          %p.wrapper__left__groups__group__comment
-            test_comment#{i}
+  render "shared/side_bar"
 
   .wrapper__right
     .wrapper__right__header
