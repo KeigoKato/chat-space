@@ -1,0 +1,19 @@
+.wrapper__left
+  .wrapper__left__user
+    %p.wrapper__left__user__name
+      = current_user.name
+    %ul.wrapper__left__user__icon
+      %li
+        = link_to do
+          %i.fa.fa-pencil-square-o.fa-lg
+      %li
+        = link_to edit_user_path do
+          %i.fa.fa-cog.fa-lg
+
+  .wrapper__left__groups
+    - for i in 1..3
+      .wrapper__left__groups__group
+        %p.wrapper__left__groups__group__name
+          test_group#{i}
+        %p.wrapper__left__groups__group__comment
+          test_comment#{i}
