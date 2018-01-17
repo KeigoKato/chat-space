@@ -1,5 +1,8 @@
-@import "reset";
-@import "valiable";
-@import "clearfix";
+@import "config/reset";
+@import "config/valiable";
 @import "font-awesome";
-@import "messages";
+@import "config/clearfix";
+@import "config/colors";
+@import "modules/user";
+@import "modules/flash";
+@import "messages/messages";
