@@ -129,8 +129,9 @@
           height: 50px;
           line-height: 50px;
           background-color: white;
-          a {
+          &__hidden {
             color: black;
+            display: none;
           }
         }
       }
@@ -140,7 +141,7 @@
         color: white;
         padding:0 30px;
         line-height: 50px;
-        margin-left: 15px;
+        margin-left: 14px;
         background-color: $skyblue-button;
       }
     }
