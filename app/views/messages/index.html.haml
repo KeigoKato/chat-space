@@ -28,11 +28,16 @@
             test_comment#{i}
 
     .wrapper__right__footer
-      %ul.wrapper__right__footer__left
-        %li.wrapper__right__footer__left__text
-          %input{type: "text", placeholder: "type a message"}
-        %li.wrapper__right__footer__left__image
-          %a{href: "#"}
-            %i.fa.fa-image.fa-lg
-      .wrapper__right__footer__right
-        Send
+      = form_for [@group, @message] do |f|
+        %ul.wrapper__right__footer__left
+          %li.wrapper__right__footer__left__text
+            = f.text_field :content, class: "wrapper__right__footer__left__text", placeholder: "type a message"
+          %li.wrapper__right__footer__left__image
+            = f.label :image, class: "wrapper__right__footer__left__image" do
+              %i.fa.fa-image.fa-lg
+              = f.file_field :image, class: "wrapper__right__footer__left__image__hidden"
+            -# %a{href: "#"}
+            -#   %i.fa.fa-image.fa-lg
+          -# .wrapper__right__footer__right
+          -#   Send
+          = f.submit "Send", class: "wrapper__right__footer__right"
