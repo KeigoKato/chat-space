@@ -20,8 +20,8 @@
 
   .wrapper__left__groups
       - current_user.groups.each do |group|
-        .wrapper__left__groups__group
-          = link_to group_messages_path(group) do
+        = link_to group_messages_path(group) do
+          .wrapper__left__groups__group
             %p.wrapper__left__groups__group__name
               group.name
             %p.wrapper__left__groups__group__comment
