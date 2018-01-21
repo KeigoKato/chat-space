@@ -5,14 +5,14 @@
   .wrapper__right
     .wrapper__right__header
       .wrapper__right__header__group
-        %p test_Group
-        %ul
-          - for i in 0..3
-            %li
-              - if i==0
-                Members :
-              -else
-                name#{i}
+        .wrapper__right__header__group__name
+          = @group.name
+        %ul.wrapper__right__header__group__members
+          %li.wrapper__right__header__group__members__member
+            Members :
+          - @group.users.each do |name|
+            %li.wrapper__right__header__group__members__member
+              = name[:name]
       .wrapper__right__header__editButton
         Edit
 
