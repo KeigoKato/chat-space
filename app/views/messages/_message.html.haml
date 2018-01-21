@@ -7,4 +7,5 @@
   .wrapper__right__messages__message__lower
     - if message.content.present?
       = message.content
-    = image_tag message.image.url if message.image.present?
+    - elsif message.image.present?
+      = image_tag message.image.url
