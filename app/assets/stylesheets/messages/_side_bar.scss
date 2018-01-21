@@ -1,0 +1,50 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  &__left {
+    float: left;
+    height: 100vh;
+    width: 300px;
+    color: $white;
+    &__user {
+      height: 120px;
+      background-color: #253141;
+      padding: 0 20px;
+      color: $white;
+      &__name {
+        float: left;
+        font-size: 16px;
+        font-weight: bold;
+        color: $white;
+        padding-top: 35px;
+      }
+      &__icon {
+        float: right;
+        padding-top: 35px;
+        li {
+          float: left;
+          margin-left: 10px;
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+    &__groups {
+      height: calc(100vh - 120px - 20px);
+      background-color: #2f3e51;
+      padding: 20px 20px 0 20px;
+      &__group {
+        &__name {
+          font-size: 15px;
+          color: $white;
+        }
+        &__comment {
+          font-size: 11px;
+          padding: 5px 0 40px 0;
+          color: $white;
+        }
+      }
+    }
+  }
+}
