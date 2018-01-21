@@ -17,15 +17,7 @@
         Edit
 
     .wrapper__right__messages
-      -for i in 1..3
-        .wrapper__right__messages__message
-          %ul.wrapper__right__messages__message__upper
-            %li.wrapper__right__messages__message__upper__name
-              keigo#{i}
-            %li.wrapper__right__messages__message__upper__date
-              2018/01/03 10:04:18
-          %p.wrapper__right__messages__message__lower
-            test_comment#{i}
+      = render @messages
 
     .wrapper__right__footer
       = form_for [@group, @message] do |f|
