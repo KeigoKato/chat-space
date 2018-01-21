@@ -14,7 +14,7 @@
             %li.wrapper__right__header__group__members__member
               = name[:name]
       .wrapper__right__header__editButton
-        Edit
+        = link_to "Edit", edit_group_path(@group)
 
     .wrapper__right__messages
       = render @messages
