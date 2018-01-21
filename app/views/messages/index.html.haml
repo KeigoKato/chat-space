@@ -10,9 +10,9 @@
         %ul.wrapper__right__header__group__members
           %li.wrapper__right__header__group__members__member
             Members :
-          - @group.users.each do |name|
+          - @group.users.each do |user|
             %li.wrapper__right__header__group__members__member
-              = name[:name]
+              = user[:name]
       .wrapper__right__header__editButton
         = link_to "Edit", edit_group_path(@group)
 
