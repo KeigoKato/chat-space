@@ -3,7 +3,7 @@
     %li.wrapper__right__messages__message__upper__name
       = message.user.name
     %li.wrapper__right__messages__message__upper__date
-      = message.created_at.to_s(:date)
+      = message.created_at.to_s(:datetime)
   .wrapper__right__messages__message__lower
     - if message.content.present?
       = message.content
