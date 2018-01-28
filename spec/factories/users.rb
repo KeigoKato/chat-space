@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :user do        #usersコントローラのテストにしようする。以下のFakerの意味はGithubを参照すること。
+  factory :user do
     password = Faker::Internet.password(8)    # = でつながれているので、password変数に値を代入している。
     name Faker::Name.last_name
     email Faker::Internet.free_email
