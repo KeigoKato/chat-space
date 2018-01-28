@@ -3,23 +3,27 @@ require "rails_helper"
 describe MessagesController do
   let(:group) {create(:group)}
   let(:user) {create(:user)}
-  # 上記のように書くことで、以下のexample文の中で単にgroupと書けばそれはcreate(:group)を実行していることになる。
+  # 上記のように書くことで、以下のexample文の中にある「group」にはcreate(:group)の実行結果が代入されている。
   # create(:group)のgroupは、factories/group.rb内で書かれたもの。
   # descrive以下の全てのexample文で使える。全てのexample文でletの値は共通。
   describe "#index" do
     context "log in" do
       before do
         login user    #ログインした状態を作る。ここのloginは/support/controller_macro.rbで定義したlogin(user)のこと
-        get :index, params: {group_id: group.id}  #getによって擬似的にindexアクションが呼び出されたからurlに乗っているparamsを取得できる。
+        get :index, params: {group_id: group.id}
+        #テストとして擬似的にgetリクエストを送った。
+        #group.idのgroupはletで作ったもの
+        #URLにあるgroup_idを指定しないとパスが通らない。
       end
       it "assigns @message" do
         expect(assigns(:message)).to be_a_new(Message)
-        #すでにgetによってindexアクションが呼び出されている。
-        #assigns(:message)は擬似的に呼び出されたindexアクションによって作られたインスタンス変数の@messageであり、コントローラを見ればわかる。
+        #assigns(:message)は擬似的なgetリクエストを送ったときに動いたindexアクション内で定義されている@messageのこと。
+        #コントローラのindex内では@messge=Message.newとあるので、@messageの中身は全て空っぽのはず。
       end
       it "assigns @group" do
         expect(assigns(:group)).to eq group
-        #左のgroupは擬似的に呼び出したmessageコントローラの@groupで、右のgroupはletで作ったgroupのこと。
+        #assigns(:group)はコントローラ内で定義された@groupのこと。右側のgroupはletで定義したもの。
+        #letによって仮想DBにfactoriesディレクトリで作ったgroupが保存されている。コントローラの@groupのプロパティ値はそれと一致する。
       end
       it "renders index" do
         expect(response).to render_template :index
@@ -39,6 +43,7 @@ describe MessagesController do
     let(:params) {{group_id: group.id, user_id: user.id, message: attributes_for(:message)}}
     # attribute_forはbuildした結果をハッシュにする。
     # attribute_forの引数の:messageはfactoriesディレクトリで作ったmessageのこと
+    binding.pry
     context "log in" do
       before do
         login user
@@ -53,7 +58,6 @@ describe MessagesController do
         it "redirects to group_messages_path" do
           subject
           expect(response).to redirect_to(group_messages_path(group))
-          binding.pry
           # prefixの引数のgroupはletで作ったもの
         end
       end
