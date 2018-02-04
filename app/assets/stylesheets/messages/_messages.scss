@@ -55,11 +55,15 @@
             padding-left: 10px;
           }
         }
-        &__lower {
+        &__lower-message {
           clear: both;
           font-size: 14px;
           color: $deep-blue;
           padding-top: 10px;
+        }
+        &__lower-image img{
+          width: 25%;
+          height: auto;
         }
       }
     }
