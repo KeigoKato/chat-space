@@ -32,11 +32,6 @@ $(function() {
     var formData = new FormData(this);
     var url = $(this).attr("action");
 
-    // for(item of formData){
-    //   console.log(item);
-    // }
-    // console.log(url);
-
     $.ajax({
       url: url,
       type: "POST",
