@@ -39,6 +39,7 @@
       height: calc(100vh - 120px - 46px - 90px);
       background-color: #fafafa;
       padding: 46px 40px 0 40px;
+      overflow: scroll;
       &__message {
         padding-bottom: 40px;
         &__upper {
@@ -55,11 +56,15 @@
             padding-left: 10px;
           }
         }
-        &__lower {
+        &__lower-message {
           clear: both;
           font-size: 14px;
           color: $deep-blue;
           padding-top: 10px;
+        }
+        &__lower-image img{
+          width: 25%;
+          height: auto;
         }
       }
     }

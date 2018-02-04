@@ -4,8 +4,9 @@
       = message.user.name
     %li.wrapper__right__messages__message__upper__date
       = message.created_at.to_s(:datetime)
-  .wrapper__right__messages__message__lower
+  .wrapper__right__messages__message__lower-message
     - if message.content.present?
       = message.content
-    - elsif message.image.present?
+  .wrapper__right__messages__message__lower-image
+    - if message.image.present?
       = image_tag message.image.url
