@@ -45,6 +45,7 @@ group :development, :test do
   gem "faker"
   gem 'pry-rails'
   gem 'jquery-rails'
+  gem 'jquery-turbolinks'
 end
 
 group :development do
