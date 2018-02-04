@@ -51,6 +51,7 @@ $(function() {
       $(".wrapper__right__footer__left__text").val("");
       $(".wrapper__right__footer__left__image__hidden").val("");
       $(".wrapper__right__footer__right").prop("disabled", false);
+      $('.wrapper__right__messages').animate({scrollTop: $('.wrapper__right__messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
       alert("failed");
