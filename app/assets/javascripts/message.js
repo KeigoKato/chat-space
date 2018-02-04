@@ -54,7 +54,7 @@ $(function() {
       $('.wrapper__right__messages').animate({scrollTop: $('.wrapper__right__messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
-      alert("failed");
+      alert("通信に失敗しました");
     })
   });
 });
