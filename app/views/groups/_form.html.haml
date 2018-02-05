@@ -24,12 +24,8 @@
     .chat-group-form__field--left
       = f.label :user_name, "チャットメンバー", class: "chat-group-form__label"
     .chat-group-form__field--right
-      -# グループ作成機能の追加時はここにcollection_check_boxesの記述を入れてください
-      -# = f.collection_check_boxes :user_ids, User.where.not("name='#{current_user.name}'"), :id, :name
-      -# = f.collection_check_boxes :user_ids, User.all, :id, :name
-      -# この部分はインクリメンタルサーチ（ユーザー追加の非同期化のときに使用します
       #chat-group-users
-        .chat-group-users.clearfix
+        .chat-group-user.clearfix
           %input{name: "group[user_ids][]" , type: "hidden", value: "#{current_user.id}"}
           %p.chat-group-user__name
             = current_user.name
