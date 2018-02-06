@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
 
+  def index
+    allUsers = User.where("name LIKE(?)", "%#{params[:keyword]}%")
+    @users=allUsers.reject{|user| user.id == current_user.id}
+    respond_to do |format|
+      format.json
+    end
+  end
+
   def edit
   end
 
