@@ -62,3 +62,13 @@ $(document).on("turbolinks:load", function(){   //あまり気にせずに行き
     $(this).parent().remove();
   });
 });
+
+
+
+
+
+
+
+
+
+
