@@ -4,6 +4,15 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    newMessages = @messages.select{ |newMessage| Time.now < newMessage.created_at+5 }
+    @gestMessages = newMessages.reject{ |gestMessage| gestMessage.user_id == current_user.id}
+    # あるメッセージが更新された時刻が現在時刻から5秒以内であれば新しいメッセージとみなす。
+    # データベースのUTCは正しく働いているから修正は必要ない。
+    # @getMessagesによって、current_userが投稿したものは除外する。
+    respond_to do |format|
+      format.html
+      format.json   # user.jsの$.ajaxが読み込まれるとここへ飛ぶ。format.jsonとだけ書かれているので次はjbuilderへ飛ぶ。
+    end
   end
 
   def create
